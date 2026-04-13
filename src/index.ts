@@ -20,6 +20,9 @@ const MEDIA_CODECS: mediasoup.types.RtpCodecCapability[] = [
     mimeType: 'audio/opus',
     clockRate: 48000,
     channels: 2,
+    preferredPayloadType: 100,
+    rtcpFeedback: [],
+    parameters: {},
   },
 ]
 
@@ -33,17 +36,6 @@ const WEBRTC_TRANSPORT_OPTIONS: mediasoup.types.WebRtcTransportOptions = {
   enableUdp: true,
   enableTcp: true,
   preferUdp: true,
-  iceServers: [
-    { urls: ['stun:stun.l.google.com:19302', 'stun:stun1.l.google.com:19302', 'stun:stun2.l.google.com:19302'] },
-    { urls: ['stun:stun.cloudflare.com:3478'] },
-    { urls: ['stun:global.stun.twilio.com:3478'] },
-    { urls: ['stun:openrelay.metered.ca:80', 'stun:openrelay.metered.ca:443'] },
-    { urls: ['stun:stunserver.stunprotocol.org:3478'] },
-    { urls: ['turn:openrelay.metered.ca:80', 'turn:openrelay.metered.ca:443', 'turn:openrelay.metered.ca:443?transport=tcp'], username: 'openrelayproject', credential: 'openrelayproject' },
-    { urls: ['turns:openrelay.metered.ca:443'], username: 'openrelayproject', credential: 'openrelayproject' },
-    { urls: ['turn:numb.viagenie.ca'], username: 'webrtc@live.com', credential: 'muazkh' },
-    { urls: ['turn:relay.backups.cz', 'turn:relay.backups.cz?transport=tcp'], username: 'webrtc', credential: 'webrtc' },
-  ],
 }
 
 // ─── State ───────────────────────────────────────────────────────────────────
